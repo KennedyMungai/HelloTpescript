@@ -1,10 +1,20 @@
-function calculateTax(income:number, taxYear: number = 2022): number {
-    if(taxYear < 2022)
-    {
-        return income * 1.2;
-    }
+type Customer = {
+    birthday?: Date
+};
 
-    return income * 1.3;
+function getCustomer(id:number): Customer | null | undefined {
+    return id === 0 ? null : {birthday: new Date()};
 }
 
-calculateTax(10_000, 2022);
+let customer = getCustomer(1);
+
+//Optional property access operator
+console.log(customer?.birthday?.getFullYear);
+
+//Optional element access operator
+//if(customers !== nul; && customers !== undefined)
+//      customers?.[0]
+
+//Optional call
+let log: any = (message: string) => console.log(message);
+log?.('a');
