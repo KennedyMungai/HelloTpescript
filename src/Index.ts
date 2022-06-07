@@ -1,6 +1,10 @@
-let age: number = 20;
+function calculateTax(income:number, taxYear: number = 2022): number {
+    if(taxYear < 2022)
+    {
+        return income * 1.2;
+    }
 
-if (age < 50)
-    age += 10;
+    return income * 1.3;
+}
 
-console.log(age);
+calculateTax(10_000, 2022);
